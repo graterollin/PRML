@@ -6,8 +6,9 @@
 # NN solution for the Concrete Cracks classification 
 # ---------------------------
 import os
-import cv2
+#import cv2
 import numpy as np
+import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
 
@@ -93,8 +94,10 @@ def main():
     positive_pics = 'ConcreteCracks/Positive'
 
     #(x_train, y_train), (x_test, y_test) = 
-    data_preprocessing(negative_pics, positive_pics)
-
+    #data_preprocessing(negative_pics, positive_pics)
+    
+    print(tf.test.is_gpu_available())
+    print(tf.test.is_built_with_cuda())
     return None
 
 main()
